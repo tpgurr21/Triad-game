@@ -1,44 +1,107 @@
+
+.playing-area {
+  max-width: fit-content;
+  margin-inline: auto;
+}
+
 .board {
     display: grid;
-    grid-template-rows: 100px 100px 100px;
-    grid-template-columns: 100px 100px 100px;
+    height: 500px;
+    width: 400px;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
     grid-template-areas:
     'top-left top-center top-right'
-    'middle-left middle-center Middle-right'
+    'middle-left middle-center middle-right'
     'bottom-left bottom-center bottom-right';    
+    /* justify-items: center;
+    align-items: center; */
     overflow: hidden;
     border: 2px;
     border-color: black;
     border-radius: 2px;
-    grid-gap: 1em;
-   --line-offset: calc(var(--gap) / 2);
-   --line-thickness: 2px;
-   --line-color: red;
+    grid-gap: 5px;
+    border-style: solid;
 }
 .slot {
     position: relative;
-
-}
-.slot:before, 
-.slot:after {
-   content: '';
-   position: absolute;
-   background-color: var(--line-color);
-   z-index: 1;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px;
+    border-spacing: 150px;
 }
 
-.slot::after {
-    inline-size: 100vw;
-    block-size: var(--line-thickness);
-    inset-inline-start: 0;
-    inset-block-start: calc(var(--line-offset) * -1);
+
+  .slot-1 {
+    grid-area: top-left
+  }
+  
+  .slot-2 {
+    grid-area: top-center
   }
 
-  .slot::before {
-    inline-size: var(--line-thickness);
-    block-size: 100vh;
-    inset-block-start: 0;
-    inset-inline-start: calc(var(--line-offset) * -1);
+  .slot-3 {
+    grid-area: top-right
   }
 
-  .slot-1
+  .slot-4 {
+    grid-area: middle-left
+  }
+  
+  .slot-5 {
+    grid-area: middle-center
+
+  }
+  .slot-6{
+    grid-area: middle-right
+
+  }
+  .slot-7 {
+    grid-area: bottom-left
+
+  }
+  .slot-8 {
+    grid-area: bottom-center
+
+  }
+  .slot-9 {
+    grid-area: bottom-right
+
+  }
+
+  .deck {
+    display: grid;
+    height: auto;
+    width: auto;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 1;
+    grid-template-areas:
+    'top-left top-center top-right'
+    'middle-left middle-center middle-right'
+    'bottom-left bottom-center bottom-right';    
+    /* justify-items: center;
+    align-items: center; */
+    overflow: hidden;
+    border: 2px;
+    border-color: black;
+    border-radius: 2px;
+    grid-gap: 5px;
+    border-style: solid;
+  }
+
+  .card {
+    position: relative;
+    height: 150px;
+    width: 118px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px;
+    border-spacing: 150px;
+  }
+
+  div.image1 {
+    background-image:url('images/Kain.png');
+    margin: 0; /* If you want no margin */
+    padding: 0; /*if your want to padding */
+    background-size: cover;
+  }
